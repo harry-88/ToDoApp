@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ToDoApp</string>
+    <string name="toDoLabel">To Do</string>
+    <string name="addTask">Add some task for your ease</string>
+    <string name="emptyList">Empty List</string>
+    <string name="createList">Create List</string>
+</resources>
