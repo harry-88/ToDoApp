@@ -31,6 +31,7 @@ public class AddItem extends AppCompatActivity {
     ArrayList<String> list;
     private TextView tvCalender;
     private TextView tvTime;
+    EditText etList;
 
     CheckBox hBox,MBox,LBox;
     EditText etItem;
@@ -54,6 +55,7 @@ public class AddItem extends AppCompatActivity {
     }
 
     private void init() {
+        etList = findViewById(R.id.etList);
         list = new ArrayList<>();
         btnSave = findViewById(R.id.btnSave);
         btnSave.setOnClickListener(new View.OnClickListener() {
@@ -104,11 +106,11 @@ public class AddItem extends AppCompatActivity {
                 recyclerView.setVisibility(View.VISIBLE);
                 ivEmpty.setVisibility(View.INVISIBLE);
                 tvEmpty.setVisibility(View.INVISIBLE);
-                if (etItem.getText().toString()!="add Item" || !etItem.getText().toString().isEmpty())
+                if (etList.getText().toString()!="add Item" || !etList.getText().toString().isEmpty())
                 {
-                    list.add(etItem.getText().toString());
+                    list.add(etList.getText().toString());
                     adapter.notifyDataSetChanged();
-                    etItem.setText("add Item");
+                    etList.setText("add Item");
                 }
             }
         });

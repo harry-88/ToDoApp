@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        adapter = new itemAdaptor(this,);
+        adapter = new itemAdaptor(this,new ArrayList<>());
         recyclerView.setAdapter(adapter);
 
         tvDate = findViewById(R.id.tvData);
@@ -71,10 +71,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private ArrayList<AccountInfo> readFromFile(Context context) {
+    private ArrayList<showList> readFromFile(Context context) {
 
         String ret = "";
-        ArrayList<AccountInfo>  arrayList = new ArrayList<>();
+        ArrayList<showList>  arrayList = new ArrayList<>();
 
         try {
             InputStream inputStream = context.openFileInput("accounts.txt");
@@ -89,8 +89,8 @@ public class MainActivity extends AppCompatActivity {
                 int i = 0;
                 while ( (receiveString = bufferedReader.readLine()) != null ) {
                     token = receiveString.split(",");
-                    arrayList.add(new AccountInfo(token[0],token[1],token[3],token[4]));
-                    arrayList.get(i++).setPref(Integer.parseInt(token[2]));
+//                    arrayList.add(new AccountInfo(token[0],token[1],token[3],token[4]));
+//                    arrayList.get(i++).setPref(Integer.parseInt(token[2]));
                     stringBuilder.append("\n").append(receiveString);
 
                 }
